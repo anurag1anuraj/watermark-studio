@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://watermark-studio-opal.vercel.app/sitemap.xml
