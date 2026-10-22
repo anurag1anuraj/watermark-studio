@@ -1,25 +1,18 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://watermark-studio-opal.vercel.app/index.html</loc>
+    <loc>https://watermark-studio-opal.vercel.app/</loc>
   </url>
-
   <url>
     <loc>https://watermark-studio-opal.vercel.app/about.html</loc>
   </url>
-
   <url>
     <loc>https://watermark-studio-opal.vercel.app/contact.html</loc>
   </url>
-
   <url>
     <loc>https://watermark-studio-opal.vercel.app/privacy-policy.html</loc>
   </url>
-
   <url>
     <loc>https://watermark-studio-opal.vercel.app/terms-and-conditions.html</loc>
   </url>
-
 </urlset>
