@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Watermark Studio – How the PDF and Image Watermark Tool Works</title>
+  <meta name="description" content="Learn what Watermark Studio is, how browser-based PDF and image watermarking works, what each setting does, the tool's limitations, and how your files are handled.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-indigo-700">Skip to content</a>
+
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="index.html" class="flex items-center gap-2 text-lg font-bold text-slate-900">
+        <svg class="h-8 w-8 text-indigo-600" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="7" fill="currentColor"/><path d="M9 21l3-10 4 8 4-8 3 10" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Watermark Studio</span>
+      </a>
+      <nav aria-label="Main navigation" class="hidden items-center gap-1 text-sm lg:flex">
+        <a href="index.html" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Home</a>
+        <a href="index.html#tool" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Watermark Tool</a>
+        <a href="about.html" aria-current="page" class="rounded-md bg-indigo-50 px-2.5 py-2 font-semibold text-indigo-700">About</a>
+        <a href="contact.html" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Contact</a>
+        <a href="privacy-policy.html" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Privacy Policy</a>
+        <a href="terms-and-conditions.html" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Terms and Conditions</a>
+      </nav>
+      <button id="menuBtn" type="button" class="rounded-md p-2 text-slate-700 hover:bg-slate-100 lg:hidden" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
+        <svg id="menuIconOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menuIconClose" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white lg:hidden">
+      <nav aria-label="Mobile navigation" class="mx-auto flex max-w-6xl flex-col px-4 py-2 text-sm">
+        <a href="index.html" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Home</a>
+        <a href="index.html#tool" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Watermark Tool</a>
+        <a href="about.html" aria-current="page" class="rounded-md bg-indigo-50 px-3 py-3 font-semibold text-indigo-700">About</a>
+        <a href="contact.html" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Contact</a>
+        <a href="privacy-policy.html" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Privacy Policy</a>
+        <a href="terms-and-conditions.html" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Terms and Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="flex-1">
+    <div class="border-b border-slate-200 bg-gradient-to-b from-indigo-50 to-slate-50">
+      <div class="mx-auto max-w-3xl px-4 py-10 sm:py-14">
+        <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">About Watermark Studio</h1>
+        <p class="mt-3 text-lg text-slate-600">A free, browser-based tool for adding text watermarks to PDF documents and images, with a live preview and full control over how the watermark looks.</p>
+      </div>
+    </div>
+
+    <article class="prose-ws mx-auto max-w-3xl px-4 pb-16 pt-4">
+
+      <h2 id="introduction">1. Introduction to Watermark Studio</h2>
+      <p>Watermark Studio is a small web application that lets you place text over PDF pages and image files. You choose a file, type the text you want to show (for example “DRAFT”, “CONFIDENTIAL”, or your name), adjust how it looks, and download a new copy with the watermark applied. The original file on your device is never changed.</p>
+
+      <h2 id="purpose">2. Purpose of the website</h2>
+      <p>The goal is simple: make watermarking quick and accessible without installing software, creating an account, or sending documents to a stranger's server. The tool is designed for everyday jobs such as marking a draft contract, labelling a photo before sharing it, or stamping a document with a recipient's name.</p>
+
+      <h2 id="what-is-a-watermark">3. What is a watermark?</h2>
+      <p>A watermark is text or a graphic placed over or behind the main content of a document or image. It is usually semi-transparent so the underlying content stays readable, while still being visible enough to communicate something about the file, such as who made it, who it is for, or what its status is.</p>
+
+      <h2 id="why-useful">4. Why are watermarks useful?</h2>
+      <ul>
+        <li><strong>Attribution:</strong> a visible name or website reminds viewers who created or published the work.</li>
+        <li><strong>Status labelling:</strong> words like “DRAFT”, “SAMPLE” or “NOT FOR DISTRIBUTION” make the purpose of a file clear at a glance.</li>
+        <li><strong>Deterrence:</strong> a visible mark makes casual reuse less attractive.</li>
+        <li><strong>Traceability:</strong> marking a copy with a recipient's name can discourage passing it on.</li>
+      </ul>
+      <div class="callout"><strong>Important:</strong> a watermark does not guarantee copyright protection and does not prevent copying. Anyone determined enough may crop, edit or remove a watermark. Treat it as a visible deterrent and label, not as a security system.</div>
+
+      <h2 id="use-cases">5. Common watermark use cases</h2>
+      <ul>
+        <li>Marking business documents as drafts, confidential or internal.</li>
+        <li>Adding a photographer's or designer's name to preview images.</li>
+        <li>Labelling sample pages of a report, worksheet or e-book.</li>
+        <li>Stamping scanned copies of documents with the purpose they were shared for (for example, “For rental application only”).</li>
+        <li>Adding a website name to graphics shared online.</li>
+      </ul>
+
+      <h2 id="formats">6. Supported file formats</h2>
+      <ul>
+        <li><strong>PDF</strong> (.pdf): the watermark is added to every page. Password-protected PDFs are not supported.</li>
+        <li><strong>JPEG</strong> (.jpg, .jpeg): exported again as JPEG.</li>
+        <li><strong>PNG</strong> (.png): exported again as PNG, keeping transparent areas transparent.</li>
+        <li><strong>WebP</strong> (.webp): exported again as WebP where your browser supports WebP encoding.</li>
+      </ul>
+      <p>The maximum file size is 50 MB. Very large images (above roughly 120 megapixels or 16,384 pixels on a side) are rejected because most browsers cannot process them reliably.</p>
+
+      <h2 id="how-it-works">7. How the watermark tool works</h2>
+      <p>The tool runs entirely in your web browser. For PDFs it uses the open-source <strong>PDF-Lib</strong> library to read the document, draw semi-transparent text on each page, and save a new PDF. For images it uses the browser's <strong>HTML canvas</strong>: the image is drawn at its original size, the watermark text is drawn above it, and the result is exported back to an image file. The finished file is created in memory and handed to your browser as a normal download.</p>
+      <p>For repeating watermarks, the tool calculates a grid of text positions, rotates the grid to the angle you choose, and places text wherever it falls on the page, so the pattern covers the whole page rather than drifting off its edges. Alternate rows are offset by half a step to give a more natural, harder-to-ignore pattern.</p>
+
+      <h2 id="steps">8. Step-by-step instructions</h2>
+      <ol>
+        <li>Open the <a href="index.html#tool">Watermark Tool</a>.</li>
+        <li>Click the upload area, or drag a PDF, JPG, PNG or WebP file onto it.</li>
+        <li>Type your watermark text.</li>
+        <li>Choose a repeating pattern or a single centred watermark.</li>
+        <li>Adjust font size, opacity, rotation, colour and, for repeating patterns, spacing. Watch the live preview update.</li>
+        <li>Click <em>Apply watermark &amp; download</em>. Wait for the button to finish processing.</li>
+        <li>Open the downloaded file and check it before sharing. The file name is your original name plus “-watermarked”.</li>
+      </ol>
+
+      <h2 id="settings">9. Explanation of watermark settings</h2>
+      <ul>
+        <li><strong>Watermark text:</strong> the words to display on one line. PDF watermarks use the standard Helvetica font, which supports Latin characters only.</li>
+        <li><strong>Pattern:</strong> “Repeating” tiles the text across the whole page or image; “Single, centred” places one watermark in the middle.</li>
+        <li><strong>Font size:</strong> for PDFs this is in points. For images it is relative to the image width, so the same setting looks the same on a small and a large photo.</li>
+        <li><strong>Opacity:</strong> how solid the text is. Lower values keep the underlying content easier to read.</li>
+        <li><strong>Rotation:</strong> the angle of the text. Positive values turn the text counter-clockwise; negative values turn it clockwise.</li>
+        <li><strong>Text colour:</strong> any colour you pick. Mid-tones with low opacity tend to stay visible on both light and dark backgrounds.</li>
+        <li><strong>Horizontal and vertical spacing:</strong> the gap between repeated watermarks. Larger values give a sparser pattern.</li>
+      </ul>
+      <p>PDF pages keep their original size, page count and orientation. The tool does not resize or reflow your pages.</p>
+
+      <h2 id="browser-based">10. Advantages of browser-based file processing</h2>
+      <ul>
+        <li><strong>Privacy by design:</strong> selected files are processed on your device and are not uploaded to our servers.</li>
+        <li><strong>Speed:</strong> there is no upload or download queue, so processing starts immediately.</li>
+        <li><strong>No account needed:</strong> you can use the tool without registering.</li>
+        <li><strong>Works across devices:</strong> any modern browser on desktop, tablet or phone can run it.</li>
+      </ul>
+
+      <h2 id="limitations">11. Current limitations</h2>
+      <ul>
+        <li>Only text watermarks are supported; logos and image stamps are not.</li>
+        <li>PDF watermark text is limited to standard Latin characters. Other scripts (for example Malayalam, Hindi, Arabic or Chinese) work on images but not in PDFs.</li>
+        <li>The PDF preview shows only page 1. The watermark is added to every page when you download, so check the downloaded PDF to see the final result. If the preview library cannot load, a blank page layout is shown instead.</li>
+        <li>Password-protected or damaged PDFs cannot be processed.</li>
+        <li>PDF watermarking is added on top of the page content. It is not embedded as a hidden or tamper-proof layer.</li>
+        <li>Images are exported with high quality settings, but JPEG and WebP are lossy formats, so re-saving can change pixels slightly.</li>
+        <li>One file is processed at a time.</li>
+        <li>The tool needs an internet connection the first time it loads, because the styling framework and the PDF library are fetched from public content delivery networks.</li>
+      </ul>
+
+      <h2 id="privacy">12. File privacy and security considerations</h2>
+      <p>Files you select are read by your browser and processed locally. The website does not include code that uploads your documents or images. However, your hosting provider and the content delivery networks that supply the website's libraries may receive standard technical request data (such as your IP address and browser type) when pages and scripts load. If you handle highly sensitive material, work on a trusted, up-to-date device and browser. Read the full <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+
+      <h2 id="responsible-use">13. Responsible and lawful use of watermarks</h2>
+      <p>Only watermark files you have the right to use and modify. Do not use watermarks to misrepresent ownership of someone else's work, to disguise the origin of a document, or to mislead anyone. Adding your name to a file does not make you its copyright owner. See the <a href="terms-and-conditions.html">Terms and Conditions</a> for more.</p>
+
+      <h2 id="developer">14. About the developer</h2>
+      <p>Anurag is a frontend developer from Kerala, India, interested in building practical websites and useful browser-based tools. Watermark Studio is one of those tools. You are welcome to send bug reports and ideas through the <a href="contact.html">Contact page</a>.</p>
+
+      <h2 id="faq">15. Frequently asked questions</h2>
+      <details>
+        <summary>Is Watermark Studio free?</summary>
+        <p>Yes, the watermark tool can be used without payment or an account.</p>
+      </details>
+      <details>
+        <summary>Are my files uploaded anywhere?</summary>
+        <p>No. Your files are processed in your browser. The site's code does not send them to a server. Technical data such as your IP address may still be visible to hosting and CDN providers when you load the site; see the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </details>
+      <details>
+        <summary>Will my original file be changed?</summary>
+        <p>No. The tool creates a new file for download and leaves the original untouched.</p>
+      </details>
+      <details>
+        <summary>Can someone remove the watermark?</summary>
+        <p>It may be possible, especially for a light watermark on a simple background. A watermark is a visible deterrent, not a guarantee of protection.</p>
+      </details>
+      <details>
+        <summary>Why does my PDF preview show only one page, or a blank page?</summary>
+        <p>The preview draws page 1 of your PDF using the pdf.js library. If that library cannot load (for example, no internet connection) or cannot read the file, a blank layout of page 1 is shown instead. The download is created separately and still contains your real content on every page.</p>
+      </details>
+      <details>
+        <summary>Why did my PDF fail to process?</summary>
+        <p>The most common causes are password protection, a corrupted file, or watermark text containing characters that the standard PDF font cannot display. Try removing the protection or using Latin characters.</p>
+      </details>
+      <details>
+        <summary>Why is the tool not working offline?</summary>
+        <p>The page loads its styling framework and PDF library from the internet. Once loaded in the same browser session, image watermarking can continue to work, but PDF watermarking needs the PDF library to have loaded successfully.</p>
+      </details>
+
+      <h2 id="links">16. Try the tool</h2>
+      <p><a href="index.html#tool" class="font-semibold">Open the Watermark Tool</a> and add a watermark to your first file.</p>
+
+      <h2 id="contact-link">17. Get in touch</h2>
+      <p>Found a bug or have a suggestion? Visit the <a href="contact.html" class="font-semibold">Contact page</a>.</p>
+    </article>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-slate-900 text-slate-300">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2">
+      <div>
+        <p class="text-lg font-bold text-white">Watermark Studio</p>
+        <p class="mt-2 max-w-sm text-sm">A free browser-based tool for adding text watermarks to PDF and image files.</p>
+      </div>
+      <nav aria-label="Footer navigation" class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:justify-items-end">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="index.html#tool" class="hover:text-white">Watermark Tool</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="contact.html" class="hover:text-white">Contact</a>
+        <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="terms-and-conditions.html" class="hover:text-white">Terms and Conditions</a>
+      </nav>
+    </div>
+    <div class="border-t border-slate-800 px-4 py-4 text-center text-xs text-slate-400">&copy; <span id="year">2026</span> Watermark Studio. All rights reserved.</div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

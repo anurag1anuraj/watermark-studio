@@ -1,0 +1,60 @@
+/* Watermark Studio – shared styles (supplements Tailwind CSS) */
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; border-radius: 4px; }
+
+/* Range sliders */
+input[type="range"] { accent-color: #4f46e5; width: 100%; }
+input[type="color"] { padding: 0; border: 1px solid #cbd5e1; border-radius: 0.5rem; height: 2.5rem; width: 3.5rem; background: #fff; cursor: pointer; }
+
+/* Transparent-image preview background */
+.checker {
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #e2e8f0 25%, transparent 25%),
+    linear-gradient(-45deg, #e2e8f0 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e2e8f0 75%),
+    linear-gradient(-45deg, transparent 75%, #e2e8f0 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+/* Drop zone drag state */
+.dropzone-active { border-color: #4f46e5 !important; background-color: #eef2ff !important; }
+
+/* Spinner */
+@keyframes ws-spin { to { transform: rotate(360deg); } }
+.ws-spinner {
+  width: 1rem; height: 1rem; border-radius: 9999px;
+  border: 2px solid rgba(255,255,255,.4); border-top-color: #fff;
+  animation: ws-spin .7s linear infinite;
+}
+
+/* Long-form content on About / Privacy / Terms / Contact */
+.prose-ws { color: #334155; line-height: 1.75; font-size: 1.0625rem; }
+.prose-ws h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 700; color: #0f172a; margin: 2.5rem 0 .75rem; }
+.prose-ws h3 { font-size: 1.15rem; font-weight: 650; color: #0f172a; margin: 1.5rem 0 .5rem; }
+.prose-ws p { margin: .85rem 0; }
+.prose-ws ul, .prose-ws ol { margin: .85rem 0 .85rem 1.4rem; }
+.prose-ws ul { list-style: disc; }
+.prose-ws ol { list-style: decimal; }
+.prose-ws li { margin: .35rem 0; padding-left: .2rem; }
+.prose-ws a { color: #4338ca; text-decoration: underline; text-underline-offset: 2px; }
+.prose-ws a:hover { color: #312e81; }
+.prose-ws strong { color: #0f172a; }
+.prose-ws details { border: 1px solid #e2e8f0; border-radius: .75rem; background: #fff; padding: .85rem 1rem; margin: .6rem 0; }
+.prose-ws summary { cursor: pointer; font-weight: 600; color: #0f172a; }
+.prose-ws details p { margin: .6rem 0 0; }
+.prose-ws .callout { border-left: 4px solid #6366f1; background: #eef2ff; padding: .85rem 1rem; border-radius: 0 .5rem .5rem 0; margin: 1.25rem 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ws-spinner { animation-duration: 2s; }
+}

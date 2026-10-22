@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watermark Studio – Add Text Watermarks to PDF and Images Online</title>
+  <meta name="description" content="Add repeating or single text watermarks to PDF, JPG, PNG and WebP files directly in your browser. Adjust size, colour, opacity, rotation and spacing with a live preview. Files are processed on your device.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-indigo-700">Skip to content</a>
+
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="index.html" class="flex items-center gap-2 text-lg font-bold text-slate-900">
+        <svg class="h-8 w-8 text-indigo-600" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="3" y="3" width="26" height="26" rx="7" fill="currentColor"/><path d="M9 21l3-10 4 8 4-8 3 10" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Watermark Studio</span>
+      </a>
+      <nav aria-label="Main navigation" class="hidden items-center gap-1 text-sm lg:flex">
+        <a href="index.html" aria-current="page" class="rounded-md bg-indigo-50 px-2.5 py-2 font-semibold text-indigo-700">Home</a>
+        <a href="index.html#tool" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Watermark Tool</a>
+        <a href="about.html" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">About</a>
+        <a href="contact.html" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Contact</a>
+        <a href="privacy-policy.html" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Privacy Policy</a>
+        <a href="terms-and-conditions.html" class="rounded-md px-2.5 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">Terms and Conditions</a>
+      </nav>
+      <button id="menuBtn" type="button" class="rounded-md p-2 text-slate-700 hover:bg-slate-100 lg:hidden" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
+        <svg id="menuIconOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menuIconClose" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white lg:hidden">
+      <nav aria-label="Mobile navigation" class="mx-auto flex max-w-6xl flex-col px-4 py-2 text-sm">
+        <a href="index.html" aria-current="page" class="rounded-md bg-indigo-50 px-3 py-3 font-semibold text-indigo-700">Home</a>
+        <a href="index.html#tool" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Watermark Tool</a>
+        <a href="about.html" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">About</a>
+        <a href="contact.html" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Contact</a>
+        <a href="privacy-policy.html" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Privacy Policy</a>
+        <a href="terms-and-conditions.html" class="rounded-md px-3 py-3 text-slate-700 hover:bg-slate-100">Terms and Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="flex-1">
+
+    <section class="border-b border-slate-200 bg-gradient-to-b from-indigo-50 to-slate-50">
+      <div class="mx-auto max-w-4xl px-4 py-12 text-center sm:py-16">
+        <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Add text watermarks to PDFs and images</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-base text-slate-600 sm:text-lg">Choose a PDF, JPG, PNG or WebP file, style your watermark, preview it live and download the result. Processing happens in your browser, so your file is not uploaded to our servers.</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href="#tool" class="rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-700">Start watermarking</a>
+          <a href="about.html" class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">How it works</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="tool" class="mx-auto max-w-6xl px-4 py-10" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="text-2xl font-bold text-slate-900">Watermark Tool</h2>
+      <p class="mt-1 text-sm text-slate-600">Supported formats: PDF, JPG / JPEG, PNG, WebP (up to 50 MB).</p>
+
+      <noscript><p class="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">JavaScript is required for the watermark tool.</p></noscript>
+
+      <div class="mt-6 grid gap-6 lg:grid-cols-2">
+
+        <!-- Controls -->
+        <div class="space-y-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div>
+            <label id="dropzone" for="fileInput" class="flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 px-4 py-8 text-center transition hover:border-indigo-400 hover:bg-indigo-50">
+              <svg class="h-9 w-9 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0l-4 4m4-4l4 4M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+              <span class="mt-2 text-sm font-semibold text-slate-800">Click to choose a file or drag it here</span>
+              <span class="mt-1 text-xs text-slate-500">PDF, JPG, PNG or WebP</span>
+              <input id="fileInput" type="file" class="sr-only" accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp">
+            </label>
+            <div class="mt-3 flex items-start justify-between gap-3">
+              <p id="fileInfo" class="hidden min-w-0 text-sm"></p>
+              <button id="clearBtn" type="button" class="hidden shrink-0 text-sm font-medium text-indigo-700 hover:underline">Remove file</button>
+            </div>
+          </div>
+
+          <div>
+            <label for="wmText" class="block text-sm font-semibold text-slate-800">Watermark text</label>
+            <input id="wmText" type="text" maxlength="80" autocomplete="off" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-indigo-500" placeholder="e.g. CONFIDENTIAL">
+            <p class="mt-1 text-xs text-slate-500">PDF watermarks support standard Latin characters. Images accept any text your device can display.</p>
+          </div>
+
+          <fieldset>
+            <legend class="text-sm font-semibold text-slate-800">Pattern</legend>
+            <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
+              <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 has-[:checked]:border-indigo-500 has-[:checked]:bg-indigo-50">
+                <input type="radio" name="wmMode" value="repeat" checked class="accent-indigo-600"> Repeating
+              </label>
+              <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 has-[:checked]:border-indigo-500 has-[:checked]:bg-indigo-50">
+                <input type="radio" name="wmMode" value="single" class="accent-indigo-600"> Single, centred
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <div class="flex items-center justify-between"><label for="wmSize" class="text-sm font-semibold text-slate-800">Font size</label><span id="sizeOut" class="text-sm text-slate-500"></span></div>
+              <input id="wmSize" type="range" min="10" max="200" step="1" value="48" class="mt-2">
+            </div>
+            <div>
+              <div class="flex items-center justify-between"><label for="wmOpacity" class="text-sm font-semibold text-slate-800">Opacity</label><span id="opacityOut" class="text-sm text-slate-500"></span></div>
+              <input id="wmOpacity" type="range" min="5" max="100" step="1" value="30" class="mt-2">
+            </div>
+            <div>
+              <div class="flex items-center justify-between"><label for="wmAngle" class="text-sm font-semibold text-slate-800">Rotation</label><span id="angleOut" class="text-sm text-slate-500"></span></div>
+              <input id="wmAngle" type="range" min="-180" max="180" step="1" value="30" class="mt-2">
+            </div>
+            <div>
+              <label for="wmColor" class="block text-sm font-semibold text-slate-800">Text colour</label>
+              <input id="wmColor" type="color" value="#4f46e5" class="mt-1">
+            </div>
+          </div>
+
+          <div id="gapFields" class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <div class="flex items-center justify-between"><label for="wmGapX" class="text-sm font-semibold text-slate-800">Horizontal spacing</label><span id="gapXOut" class="text-sm text-slate-500"></span></div>
+              <input id="wmGapX" type="range" min="0" max="300" step="1" value="40" class="mt-2">
+            </div>
+            <div>
+              <div class="flex items-center justify-between"><label for="wmGapY" class="text-sm font-semibold text-slate-800">Vertical spacing</label><span id="gapYOut" class="text-sm text-slate-500"></span></div>
+              <input id="wmGapY" type="range" min="0" max="300" step="1" value="60" class="mt-2">
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-500">For PDFs, size and spacing are in points (1/72 inch). For images, they scale with the image width so the result looks the same at any resolution. Positive rotation turns the text counter-clockwise.</p>
+
+          <button id="resetBtn" type="button" class="text-sm font-medium text-indigo-700 hover:underline">Reset settings</button>
+        </div>
+
+        <!-- Preview and download -->
+        <div class="space-y-4 lg:sticky lg:top-20 lg:self-start">
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="text-sm font-semibold text-slate-800">Live preview</h3>
+            <div id="previewWrap" class="mt-3 flex min-h-[220px] items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+              <p id="previewEmpty" class="px-4 text-center text-sm text-slate-500">Choose a file to see a live preview here.</p>
+              <canvas id="previewCanvas" class="hidden h-auto max-h-[70vh] w-full object-contain" aria-label="Watermark preview"></canvas>
+            </div>
+            <p id="previewNote" class="mt-2 text-xs text-slate-500" aria-live="polite"></p>
+          </div>
+
+          <div id="message" class="hidden" role="status" aria-live="polite"></div>
+
+          <button id="downloadBtn" type="button" disabled class="flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-slate-300">
+            <span id="spinner" class="ws-spinner hidden" aria-hidden="true"></span>
+            <span id="downloadLabel">Apply watermark &amp; download</span>
+          </button>
+          <p class="text-xs text-slate-500">Your original file is never modified. The watermarked copy is downloaded as a new file. See the <a href="privacy-policy.html" class="text-indigo-700 underline">Privacy Policy</a> for details.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-slate-200 bg-white">
+      <div class="mx-auto grid max-w-6xl gap-6 px-4 py-12 sm:grid-cols-3">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900">Processed in your browser</h2>
+          <p class="mt-2 text-sm text-slate-600">Watermarks are drawn on your device using PDF-Lib and the HTML canvas. Selected files are not sent to our servers.</p>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-slate-900">Full control</h2>
+          <p class="mt-2 text-sm text-slate-600">Set the text, size, colour, opacity, rotation and spacing, and choose between a repeating pattern or a single centred mark.</p>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-slate-900">Original quality kept</h2>
+          <p class="mt-2 text-sm text-slate-600">PDF pages keep their size and content. Images keep their original dimensions and aspect ratio. Read the <a href="about.html" class="text-indigo-700 underline">About page</a> for current limitations.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-slate-900 text-slate-300">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2">
+      <div>
+        <p class="text-lg font-bold text-white">Watermark Studio</p>
+        <p class="mt-2 max-w-sm text-sm">A free browser-based tool for adding text watermarks to PDF and image files.</p>
+      </div>
+      <nav aria-label="Footer navigation" class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:justify-items-end">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="index.html#tool" class="hover:text-white">Watermark Tool</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="contact.html" class="hover:text-white">Contact</a>
+        <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+        <a href="terms-and-conditions.html" class="hover:text-white">Terms and Conditions</a>
+      </nav>
+    </div>
+    <div class="border-t border-slate-800 px-4 py-4 text-center text-xs text-slate-400">&copy; <span id="year">2026</span> Watermark Studio. All rights reserved.</div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
